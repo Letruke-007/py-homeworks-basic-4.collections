@@ -31,3 +31,38 @@ for elm in ids.values():
 sorted_ids = sorted(set(sorted_ids))
 
 print(sorted_ids)
+
+# Задача 3. Частотность поисковых запросов по количеству слов
+
+queries = [
+    'смотреть сериалы онлайн',
+    'новости спорта',
+    'афиша кино',
+    'курс доллара',
+    'сериалы этим летом',
+    'курс по питону',
+    'сериалы про спорт'
+    ]
+
+counter1 = 0
+counter2 = 0
+counter3 = 0
+
+
+for i in range(len(queries)):
+    words = queries[i].split(' ')
+    if len(words) == 1:
+        counter1 += 1
+    elif len(words) == 2:
+        counter2 += 1
+    elif len(words) == 3:
+        counter3 += 1
+
+res_ = counter1 + counter2 + counter3
+
+if res_ != 0:
+    print(f'Поисковых запросов, состоящих из 1 слова, {counter1 / res_ * 100}%')
+    print(f'Поисковых запросов, состоящих из 2 слов, {counter2 / res_ * 100}%')
+    print(f'Поисковых запросов, состоящих из 3 слов, {counter3 / res_ * 100}%')
+else:
+    print('Все поисковые запросы не подходят под критерии поиска (1,2 или 3 слова)')
