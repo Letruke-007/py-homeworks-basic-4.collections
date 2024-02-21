@@ -16,3 +16,18 @@ sorted_geo_logs = []
 
 result = [geo_log for geo_log in geo_logs if "Россия" in next(iter(geo_log.values()))]
 print(result)
+
+# Задача 2. Уникальные гео-ID
+
+ids = {'user1': [213, 213, 213, 15, 213],
+       'user2': [54, 54, 119, 119, 119],
+       'user3': [213, 98, 98, 35]}
+
+sorted_ids = []
+
+for elm in ids.values():
+    sorted_ids += elm
+
+sorted_ids = sorted(set(sorted_ids))
+
+print(sorted_ids)
